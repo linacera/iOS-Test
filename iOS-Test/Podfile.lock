@@ -1,0 +1,16 @@
+PODS:
+  - Swifty (1.3.0)
+
+DEPENDENCIES:
+  - Swifty
+
+SPEC REPOS:
+  trunk:
+    - Swifty
+
+SPEC CHECKSUMS:
+  Swifty: 30310fcfaa8072a0eec56c00127b2065b8517f7f
+
+PODFILE CHECKSUM: 137d8f7d364d0781b42e7087581cdd05b2776d84
+
+COCOAPODS: 1.11.3
