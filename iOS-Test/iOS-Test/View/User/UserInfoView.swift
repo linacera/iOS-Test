@@ -11,7 +11,8 @@ struct UserInfoView: View {
     var user: User
     var body: some View {
         VStack{
-            Text("User").font(.system(size: 20))
+            Text("User")
+                .font(.system(size: 20))
                 .fontWeight(.semibold)
            // UserTextView(name: "id", value: String(user.id))
             UserTextView(name: "Name", value: user.name)

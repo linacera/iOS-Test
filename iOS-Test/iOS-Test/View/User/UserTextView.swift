@@ -13,10 +13,12 @@ struct UserTextView: View {
     var body: some View {
         
         HStack{
-            Text(name + ":").font(.system(size: 15))
+            Text(name + ":")
+                .font(.system(size: 15))
                 .fontWeight(.semibold)
             
-            Text(value).font(.system(size: 15))
+            Text(value)
+                .font(.system(size: 15))
                 .fontWeight(.light)
                 .padding(.trailing,20)
             

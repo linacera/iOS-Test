@@ -10,11 +10,18 @@ import SwiftUI
 struct PostRowView: View {
     
     var post: PostViewModel
+    @State var isFavorite: Bool = false
+    
     var body: some View {
         HStack{
            
-
-            Text(post.title).font(.system(size: 20))
+            Image(systemName: self.post.isFavorite == true ? "star.fill" : "star")
+                .resizable()
+                .frame(width: 15, height: 15)
+                .foregroundColor(.yellow)
+            
+            Text(post.title)
+                .font(.system(size: 20))
         }
         
     }
@@ -22,6 +29,7 @@ struct PostRowView: View {
 
 struct PostRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PostRowView(post: testPost).previewLayout(.fixed(width: 500, height: 200))
+        PostRowView(post: testPost)
+            .previewLayout(.fixed(width: 500, height: 200))
     }
 }

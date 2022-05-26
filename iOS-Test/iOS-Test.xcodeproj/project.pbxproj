@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		523D774F2F4796FC3694904D /* Pods_iOS_Test_iOS_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826470BC95C494E49B7A8501 /* Pods_iOS_Test_iOS_TestUITests.framework */; };
+		B5CB46EF2840285D0082926D /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB46EE2840285D0082926D /* DeleteButtonView.swift */; };
 		B5F81090283691A700CA5FB4 /* iOS_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8108F283691A700CA5FB4 /* iOS_TestApp.swift */; };
 		B5F81092283691A700CA5FB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F81091283691A700CA5FB4 /* ContentView.swift */; };
 		B5F81094283691AB00CA5FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F81093283691AB00CA5FB4 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		826470BC95C494E49B7A8501 /* Pods_iOS_Test_iOS_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Test_iOS_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900A38CE23B39781209EC313 /* Pods_iOS_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4940E95D456F939B6C13546 /* Pods-iOS-Test-iOS-TestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Test-iOS-TestUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Test-iOS-TestUITests/Pods-iOS-Test-iOS-TestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5CB46EE2840285D0082926D /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
 		B5F8108C283691A700CA5FB4 /* iOS-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F8108F283691A700CA5FB4 /* iOS_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestApp.swift; sourceTree = "<group>"; };
 		B5F81091283691A700CA5FB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				B5F810EA2838124E00CA5FB4 /* User */,
 				B5F810E92838123400CA5FB4 /* Post */,
 				B5F810D52836B83A00CA5FB4 /* CommentListView.swift */,
+				B5CB46EE2840285D0082926D /* DeleteButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				B5F810E82837561D00CA5FB4 /* CommentViewModel.swift in Sources */,
 				B5F810BF2836939700CA5FB4 /* User.swift in Sources */,
 				B5F810C72836ADB400CA5FB4 /* Comment.swift in Sources */,
+				B5CB46EF2840285D0082926D /* DeleteButtonView.swift in Sources */,
 				B5F810E12836D4EA00CA5FB4 /* CommentService.swift in Sources */,
 				B5F810BA2836920300CA5FB4 /* PlaceholderWebService.swift in Sources */,
 				B5F81092283691A700CA5FB4 /* ContentView.swift in Sources */,

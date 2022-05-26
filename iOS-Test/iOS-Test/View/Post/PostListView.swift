@@ -9,34 +9,49 @@ import SwiftUI
 
 struct PostListView: View {
     
-    @ObservedObject private var postList: PostListViewModel
-    
-    
+    @StateObject private var postList: PostListViewModel  = PostListViewModel()
+    @State private var showOnlyFavorites = true
+    private var filteredPosts: PostListViewModel
     
     init() {
-        self.postList = PostListViewModel()
-        self.postList.getPosts()
+        self.filteredPosts = PostListViewModel()
+        
     }
     
     var body: some View {
                 
         NavigationView {
 
-            List(self.postList.posts) {
-                currentPost in
+            VStack{
+                List(self.postList.posts) {
+                    currentPost in
+                    
+                    NavigationLink(destination: PostDetailView(post: currentPost, user: testUser)) {
+                        PostRowView(post: currentPost);
+                    }
+                    
+                }.refreshable {
+                    self.postList.removeAllPosts()
+                    self.postList.getPosts()
+                }.navigationTitle("Posts")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationAppearance(backgroundColor: .green,
+                                      foregroundColor: .white,
+                                      tintColor: .white,
+                                      hideSeparator: true)
                 
-                NavigationLink(destination: PostDetailView(post: currentPost, user: testUser)) {
-                    PostRowView(post: currentPost);
+                Button(action: {
+                    self.postList.removeAllPosts()
+                }){
+                    DeleteButtonView(buttonText: "Delete All")
                 }
-                
-            }.navigationTitle("Posts")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationAppearance(backgroundColor: .green,
-                                  foregroundColor: .white,
-                                  tintColor: .white,
-                                  hideSeparator: true)
+            }
+           
             
-        }
+        }.environmentObject(postList)
+            .onAppear(){
+                self.postList.getPosts()
+            }
     }
 }
 

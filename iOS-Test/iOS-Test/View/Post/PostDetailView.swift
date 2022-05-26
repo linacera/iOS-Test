@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PostDetailView: View {
     var post: PostViewModel
-    
+    @EnvironmentObject var postList: PostListViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject private var user: UserViewModel = UserViewModel()
     @ObservedObject private var commentsList: CommentListViewModel = CommentListViewModel()
     
@@ -39,7 +40,29 @@ struct PostDetailView: View {
             }
             
             CommentListView(comments: commentsList.comments)
-        }
+            
+            Button(action: {
+                self.postList.removePost(id: self.post.id)
+                self.presentationMode.wrappedValue.dismiss()
+            }){
+                DeleteButtonView(buttonText: "Delete")
+            }
+
+        }.navigationTitle("Hello")
+            .toolbar{
+                Button(action: {
+                    
+                    if let index = self.postList.posts.firstIndex(where: {$0.id == self.post.id}){
+                        self.postList.posts[index].changeFavorite()
+                    }
+                   
+                }){
+                    Image(systemName: post.isFavorite ? "star.fill" :  "star")
+                        .resizable()
+                        .frame(width: 15, height: 15)
+                        .foregroundColor(.white)
+                }
+            }
         
        
     }

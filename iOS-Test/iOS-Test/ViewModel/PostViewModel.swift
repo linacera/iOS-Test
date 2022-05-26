@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct PostViewModel: Identifiable{
-    let post: Post
-    
+     var post: Post
+
     var id: Int{
         post.id
     }
@@ -26,6 +26,15 @@ struct PostViewModel: Identifiable{
     var title: String{
         post.title
     }
+    
+    var isFavorite: Bool{
+        post.isFavorite ?? false
+    }
+    
+    mutating func changeFavorite() {
+        post.changeFavorite()
+    }
+    
 }
 
 
@@ -43,6 +52,17 @@ class PostListViewModel: ObservableObject{
                 
             }
         }
+    }
+    
+    func removePost(id: Int){
+        if let postIndex = self.posts.firstIndex(where: {$0.id == id}){
+            self.posts.remove(at: postIndex)
+        }
+       
+    }
+    
+    func removeAllPosts(){
+        self.posts = [PostViewModel]()
     }
     
 }
