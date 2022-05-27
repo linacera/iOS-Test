@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Refreshable
 
 struct PostListView: View {
     
@@ -42,14 +43,15 @@ struct PostListView: View {
                     }
                     
                 }.refreshable {
-                    self.postList.removeAllPosts()
-                    self.postList.getPosts()
+                    await self.postList.removeAllPosts()
+                    await self.postList.getPosts()
                 }.navigationTitle("Posts")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationAppearance(backgroundColor: .green,
-                                      foregroundColor: .white,
-                                      tintColor: .white,
-                                      hideSeparator: true)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationAppearance(backgroundColor: .green,
+                                          foregroundColor: .white,
+                                          tintColor: .white,
+                                          hideSeparator: true)
+        
                 
                 Button(action: {
                     self.postList.removeAllPosts()

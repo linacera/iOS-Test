@@ -10,6 +10,7 @@
 		523D774F2F4796FC3694904D /* Pods_iOS_Test_iOS_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826470BC95C494E49B7A8501 /* Pods_iOS_Test_iOS_TestUITests.framework */; };
 		B5CB46EF2840285D0082926D /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB46EE2840285D0082926D /* DeleteButtonView.swift */; };
 		B5CB46F1284089D80082926D /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB46F0284089D80082926D /* StarView.swift */; };
+		B5D15FCF28411F9000A81432 /* Refreshable in Frameworks */ = {isa = PBXBuildFile; productRef = B5D15FCE28411F9000A81432 /* Refreshable */; };
 		B5F81090283691A700CA5FB4 /* iOS_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8108F283691A700CA5FB4 /* iOS_TestApp.swift */; };
 		B5F81094283691AB00CA5FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F81093283691AB00CA5FB4 /* Assets.xcassets */; };
 		B5F81097283691AB00CA5FB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F81096283691AB00CA5FB4 /* Preview Assets.xcassets */; };
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D15FCF28411F9000A81432 /* Refreshable in Frameworks */,
 				CC3647E7256A9B680942F4A2 /* Pods_iOS_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +308,9 @@
 			dependencies = (
 			);
 			name = "iOS-Test";
+			packageProductDependencies = (
+				B5D15FCE28411F9000A81432 /* Refreshable */,
+			);
 			productName = "iOS-Test";
 			productReference = B5F8108C283691A700CA5FB4 /* iOS-Test.app */;
 			productType = "com.apple.product-type.application";
@@ -381,6 +386,9 @@
 				Base,
 			);
 			mainGroup = B5F81083283691A600CA5FB4;
+			packageReferences = (
+				B5D15FCD28411F9000A81432 /* XCRemoteSwiftPackageReference "iOS.Package" */,
+			);
 			productRefGroup = B5F8108D283691A700CA5FB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -633,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -687,7 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -871,6 +879,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5D15FCD28411F9000A81432 /* XCRemoteSwiftPackageReference "iOS.Package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Geri-Borbas/iOS.Package.Refreshable";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5D15FCE28411F9000A81432 /* Refreshable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5D15FCD28411F9000A81432 /* XCRemoteSwiftPackageReference "iOS.Package" */;
+			productName = Refreshable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5F81084283691A600CA5FB4 /* Project object */;
 }

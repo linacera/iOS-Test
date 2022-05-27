@@ -9,11 +9,14 @@ import SwiftUI
 
 struct DeleteButtonView: View {
     var buttonText: String
+    
     var body: some View {
-        Text(buttonText)
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity, minHeight: 40)
-            .background(.red)
+        ZStack{
+            Color.red
+            Text(buttonText)
+                .foregroundColor(.white)
+        }.frame(maxWidth: .infinity, maxHeight: 40)
+            
     }
 }
 
