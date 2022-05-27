@@ -10,12 +10,12 @@ import SwiftUI
 struct PostListView: View {
     
     @StateObject private var postList: PostListViewModel  = PostListViewModel()
-    @State private var showOnlyFavorites = true
-    private var filteredPosts: PostListViewModel
-    
-    init() {
-        self.filteredPosts = PostListViewModel()
-        
+    @State private var showFavorites = 0
+  
+    var filteredPosts: [PostViewModel] {
+        postList.posts.filter { post in
+            (post.isFavorite || showFavorites == 0)
+        }
     }
     
     var body: some View {
@@ -23,10 +23,21 @@ struct PostListView: View {
         NavigationView {
 
             VStack{
-                List(self.postList.posts) {
+                
+                Picker("", selection: $showFavorites, content: {
+                    Text("All").tag(0)
+                    Text("Favorites").tag(1)
+                }).pickerStyle(.segmented)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    .padding(.top,10)
+                    .colorMultiply(.green)
+                
+                
+                List(self.filteredPosts) {
                     currentPost in
                     
-                    NavigationLink(destination: PostDetailView(post: currentPost, user: testUser)) {
+                    NavigationLink(destination: PostDetailView(post: currentPost)) {
                         PostRowView(post: currentPost);
                     }
                     

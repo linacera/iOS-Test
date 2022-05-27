@@ -32,4 +32,4 @@ let testComment = Comment(postId: 1, id: 1, name: "Joha", email: "cc@gmail.com",
 let testCommentList: CommentListViewModel = CommentListViewModel()
 
 
-let testUser = User(id: 1, name: "joha", username: "joha", email: "cc@gmail.com", address: Address(street: "1222`", suite: "12233", city: "12343", zipcode: "1212131", geo: Geo(lat: "121231", lng: "121212w")), phone: "1231231", website: "cc.com", company: Company(name: "company", catchPhrase: "company for the win", bs: "ashaksh"))
+let testUser = User(id: 1, name: "", username: "", email: "", address: Address(street: "1222`", suite: "12233", city: "12343", zipcode: "1212131", geo: Geo(lat: "121231", lng: "121212w")), phone: "", website: "", company: Company(name: "company", catchPhrase: "company for the win", bs: "ashaksh"))

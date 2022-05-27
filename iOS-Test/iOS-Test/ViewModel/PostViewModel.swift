@@ -65,4 +65,11 @@ class PostListViewModel: ObservableObject{
         self.posts = [PostViewModel]()
     }
     
+    func sortPostByFavorite(){
+        let sortedPosts = self.posts.sorted {
+            $0.isFavorite && !$1.isFavorite
+        }
+        self.posts = sortedPosts
+    }
+    
 }

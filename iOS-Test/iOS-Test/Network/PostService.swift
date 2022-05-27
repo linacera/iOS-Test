@@ -13,7 +13,6 @@ class PostService{
         
         
         PlaceholderWebService.getPosts().load { responseObject in
-            print(responseObject)
             if let data = responseObject {
                 guard let posts =  try? JSONDecoder().decode([Post].self, from: data) else{
                    return completion(nil)

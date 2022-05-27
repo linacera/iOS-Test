@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		523D774F2F4796FC3694904D /* Pods_iOS_Test_iOS_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826470BC95C494E49B7A8501 /* Pods_iOS_Test_iOS_TestUITests.framework */; };
 		B5CB46EF2840285D0082926D /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB46EE2840285D0082926D /* DeleteButtonView.swift */; };
+		B5CB46F1284089D80082926D /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB46F0284089D80082926D /* StarView.swift */; };
 		B5F81090283691A700CA5FB4 /* iOS_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8108F283691A700CA5FB4 /* iOS_TestApp.swift */; };
-		B5F81092283691A700CA5FB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F81091283691A700CA5FB4 /* ContentView.swift */; };
 		B5F81094283691AB00CA5FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F81093283691AB00CA5FB4 /* Assets.xcassets */; };
 		B5F81097283691AB00CA5FB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F81096283691AB00CA5FB4 /* Preview Assets.xcassets */; };
 		B5F810A1283691AC00CA5FB4 /* iOS_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F810A0283691AC00CA5FB4 /* iOS_TestTests.swift */; };
@@ -63,9 +63,9 @@
 		900A38CE23B39781209EC313 /* Pods_iOS_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4940E95D456F939B6C13546 /* Pods-iOS-Test-iOS-TestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Test-iOS-TestUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Test-iOS-TestUITests/Pods-iOS-Test-iOS-TestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5CB46EE2840285D0082926D /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
+		B5CB46F0284089D80082926D /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		B5F8108C283691A700CA5FB4 /* iOS-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F8108F283691A700CA5FB4 /* iOS_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestApp.swift; sourceTree = "<group>"; };
-		B5F81091283691A700CA5FB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5F81093283691AB00CA5FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5F81096283691AB00CA5FB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5F8109C283691AC00CA5FB4 /* iOS-TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +147,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B5CB46F228408C600082926D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B5CB46F0284089D80082926D /* StarView.swift */,
+				B5CB46EE2840285D0082926D /* DeleteButtonView.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		B5F81083283691A600CA5FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +187,6 @@
 				B5F810BD2836931200CA5FB4 /* Model */,
 				B5F810BC283692E200CA5FB4 /* Network */,
 				B5F8108F283691A700CA5FB4 /* iOS_TestApp.swift */,
-				B5F81091283691A700CA5FB4 /* ContentView.swift */,
 				B5F81093283691AB00CA5FB4 /* Assets.xcassets */,
 				B5F81095283691AB00CA5FB4 /* Preview Content */,
 			);
@@ -234,10 +242,10 @@
 		B5F810CA2836B03800CA5FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5CB46F228408C600082926D /* Util */,
 				B5F810EA2838124E00CA5FB4 /* User */,
 				B5F810E92838123400CA5FB4 /* Post */,
 				B5F810D52836B83A00CA5FB4 /* CommentListView.swift */,
-				B5CB46EE2840285D0082926D /* DeleteButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F810C1283695A300CA5FB4 /* Post.swift in Sources */,
+				B5CB46F1284089D80082926D /* StarView.swift in Sources */,
 				B5F810DA2836C3EA00CA5FB4 /* PostDescriptionView.swift in Sources */,
 				B5F810D82836BA7500CA5FB4 /* UserInfoView.swift in Sources */,
 				B5F810D02836B27800CA5FB4 /* PostDetailView.swift in Sources */,
@@ -532,7 +541,6 @@
 				B5CB46EF2840285D0082926D /* DeleteButtonView.swift in Sources */,
 				B5F810E12836D4EA00CA5FB4 /* CommentService.swift in Sources */,
 				B5F810BA2836920300CA5FB4 /* PlaceholderWebService.swift in Sources */,
-				B5F81092283691A700CA5FB4 /* ContentView.swift in Sources */,
 				B5F810E62837556800CA5FB4 /* UserViewModel.swift in Sources */,
 				B5F810CC2836B09C00CA5FB4 /* PostListView.swift in Sources */,
 				B5F810DF2836CF8000CA5FB4 /* UserService.swift in Sources */,

@@ -15,10 +15,7 @@ struct PostRowView: View {
     var body: some View {
         HStack{
            
-            Image(systemName: self.post.isFavorite == true ? "star.fill" : "star")
-                .resizable()
-                .frame(width: 15, height: 15)
-                .foregroundColor(.yellow)
+            StarView(fillStar: self.post.isFavorite, starColor: .yellow)
             
             Text(post.title)
                 .font(.system(size: 20))

@@ -10,7 +10,7 @@ import SwiftUI
 struct UserInfoView: View {
     var user: User
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Text("User")
                 .font(.system(size: 20))
                 .fontWeight(.semibold)

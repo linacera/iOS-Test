@@ -10,7 +10,7 @@ import SwiftUI
 struct PostDescriptionView: View {
     var post: PostViewModel
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Text("Description")
                 .font(.system(size: 20))
                 .fontWeight(.semibold)

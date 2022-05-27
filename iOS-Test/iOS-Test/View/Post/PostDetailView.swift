@@ -11,11 +11,13 @@ struct PostDetailView: View {
     var post: PostViewModel
     @EnvironmentObject var postList: PostListViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject private var user: UserViewModel = UserViewModel()
-    @ObservedObject private var commentsList: CommentListViewModel = CommentListViewModel()
+    @ObservedObject private var user: UserViewModel
+    @ObservedObject private var commentsList: CommentListViewModel
     
-    init(post: PostViewModel, user: User){
+    init(post: PostViewModel){
         self.post = post
+        self.user = UserViewModel()
+        self.commentsList = CommentListViewModel()
         self.user.getUser(userId: self.post.userId)
         self.commentsList.getComments(postId: self.post.id)
     }
@@ -48,21 +50,20 @@ struct PostDetailView: View {
                 DeleteButtonView(buttonText: "Delete")
             }
 
-        }.navigationTitle("Hello")
+        }.navigationTitle("")
             .toolbar{
                 Button(action: {
                     
                     if let index = self.postList.posts.firstIndex(where: {$0.id == self.post.id}){
                         self.postList.posts[index].changeFavorite()
                     }
+                    
+                    self.postList.sortPostByFavorite()
                    
                 }){
-                    Image(systemName: post.isFavorite ? "star.fill" :  "star")
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(.white)
+                    StarView(fillStar: post.isFavorite, starColor: .white)
                 }
-            }
+            }            
         
        
     }
@@ -70,6 +71,6 @@ struct PostDetailView: View {
 
 struct PostDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailView(post: testPost, user: testUser)
+        PostDetailView(post: testPost)
     }
 }
